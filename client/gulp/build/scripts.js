@@ -2,17 +2,24 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./conf');
-
-var browserSync = require('browser-sync');
+var conf = require('../conf');
 
 var $ = require('gulp-load-plugins')();
 
 function webpack(watch, callback) {
+  var preLoaders = [];
+  if (conf.isDevelopment) {
+    preLoaders.push({
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'jshint-loader'
+    });
+  }
+
   var webpackOptions = {
     watch: watch,
     module: {
-      preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'jshint-loader'}],
+      preLoaders: preLoaders,
       loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}]
     },
     output: { filename: 'index.module.js' }
@@ -32,8 +39,8 @@ function webpack(watch, callback) {
       hash: false,
       version: false
     }));
-    browserSync.reload();
     if(watch) {
+      require('browser-sync').reload();
       watch = false;
       callback();
     }

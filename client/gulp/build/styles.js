@@ -2,9 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
-var conf = require('./conf');
-
-var browserSync = require('browser-sync');
+var conf = require('../conf');
 
 var $ = require('gulp-load-plugins')();
 
@@ -32,7 +30,7 @@ gulp.task('styles', function () {
   };
 
 
-  return gulp.src([
+  var stream = gulp.src([
     path.join(conf.paths.src, '/app/index.scss')
   ])
     .pipe($.inject(injectFiles, injectOptions))
@@ -42,5 +40,10 @@ gulp.task('styles', function () {
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))
-    .pipe(browserSync.reload({ stream: true }));
+
+  if (conf.isDevelopment) {
+    stream = stream.pipe(require('browser-sync').reload({ stream: true }));
+  }
+
+  return stream;
 });
