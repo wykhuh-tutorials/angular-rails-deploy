@@ -16,9 +16,6 @@ latest.dump
 .env
 /.bundle
 /.foreman
-public/uploads
-public/system
-public/assets
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
@@ -34,6 +31,7 @@ tags
 zeus.json
 
 # gulp angular
-client/ower_components
-client/node_modules
+/node_modules
+/public
+client/bower_components
 client/.tmp

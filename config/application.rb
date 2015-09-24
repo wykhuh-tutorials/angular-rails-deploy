@@ -8,7 +8,6 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
-require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -20,6 +19,7 @@ module TestAngularRails
     config.i18n.enforce_available_locales = true
 
     config.generators do |generate|
+      generate.assets false
       generate.helper false
       generate.javascript_engine false
       generate.request_specs false
@@ -28,6 +28,8 @@ module TestAngularRails
       generate.test_framework :rspec
       generate.view_specs false
     end
+
+    config.assets.enabled = false
 
     config.action_controller.action_on_unpermitted_parameters = :raise
     # Settings in config/environments/* take precedence over those specified here.

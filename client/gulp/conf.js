@@ -8,6 +8,8 @@
 
 var gutil = require('gulp-util');
 
+exports.isDevelopment = process.env.NODE_ENV !== 'production';
+
 /**
  *  The main paths of your project handle these with care
  */

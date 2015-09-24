@@ -1,10 +1,10 @@
-function Articles ($resource) {
-    return $resource('api/v1/articles/', {
-      update: {
-        method: 'PUT'
-      }
-    });
+function Article ($resource) {
+  'ngInject';
+  return $resource('api/v1/articles/', {
+    update: {
+      method: 'PUT'
+    }
+  });
 }
 
-
-export default Articles;
+export default Article;

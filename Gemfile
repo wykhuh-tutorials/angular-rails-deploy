@@ -3,28 +3,15 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'airbrake', '~> 4.3.1'
-gem 'autoprefixer-rails', '~> 6.0.3'
 gem 'bundler', '>= 1.8.4'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'flutie', '~> 2.0.0'
 gem 'i18n-tasks', '~> 0.8.7'
 gem 'newrelic_rpm', '>= 3.9.8'
 gem 'pg', '~> 0.18.3'
-gem 'quiet_assets', '~> 1.1.0'
-gem 'rack-canonical-host', '~> 0.1.0'
 gem 'rails', '4.2.3'
+gem 'rails-api', '~> 0.4.0'
 gem 'recipient_interceptor', '~> 0.1.2'
-gem 'sass-rails', '~> 5.0'
 gem 'sidekiq', '~> 3.5.0'
-gem 'simple_form', '~> 3.2.0'
-gem 'title', '~> 0.0.5'
-gem 'uglifier', '~> 2.7.2'
 gem 'unicorn', '~> 4.9.0'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-jquery', '~> 2.1.4'
-  gem 'rails-assets-jquery-ujs', '~> 1.1.0'
-end
 
 group :development do
   gem 'better_errors', '~> 2.1.1'
@@ -45,9 +32,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara-webkit', '>= 1.2.0'
   gem 'database_cleaner', '~> 1.5.0'
-  gem 'launchy', '~> 2.4.3'
   gem 'rspec-sidekiq', '~> 2.1.0'
   gem 'shoulda-matchers', '~> 2.8.0', require: false
   gem 'timecop', '~> 0.8.0'

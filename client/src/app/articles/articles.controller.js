@@ -1,8 +1,8 @@
 class ArticlesController {
-  constructor (Articles) {
+  constructor (Article) {
     'ngInject';
 
-    Articles.query( (res) => {
+    Article.query((res) => {
       this.articles = res;
     });
   }
