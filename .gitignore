@@ -34,6 +34,6 @@ tags
 zeus.json
 
 # gulp angular
-client/ower_components
-client/node_modules
+/node_modules
+client/bower_components
 client/.tmp
