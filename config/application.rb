@@ -20,6 +20,7 @@ module TestAngularRails
     config.i18n.enforce_available_locales = true
 
     config.generators do |generate|
+      generate.assets false
       generate.helper false
       generate.javascript_engine false
       generate.request_specs false
@@ -28,6 +29,8 @@ module TestAngularRails
       generate.test_framework :rspec
       generate.view_specs false
     end
+
+    config.assets.enabled = false
 
     config.action_controller.action_on_unpermitted_parameters = :raise
     # Settings in config/environments/* take precedence over those specified here.
