@@ -6,7 +6,16 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
+    })
+
+    .state('articles', {
+      url: '/articles',
+      templateUrl: 'app/articles/articles.html',
+      controller: 'ArticlesController',
+      controllerAs: 'vm'
     });
+
+
 
   $urlRouterProvider.otherwise('/');
 }

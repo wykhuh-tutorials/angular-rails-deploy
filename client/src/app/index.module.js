@@ -1,4 +1,4 @@
-/* global malarkey:false, toastr:false, moment:false */
+/* global malarkey:false, toastr:false, moment:false, railsResourceFactory:false */
 import config from './index.config';
 
 import routerConfig from './index.route';
@@ -9,6 +9,8 @@ import GithubContributorService from '../app/components/githubContributor/github
 import WebDevTecService from '../app/components/webDevTec/webDevTec.service';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import MalarkeyDirective from '../app/components/malarkey/malarkey.directive';
+import ArticlesController from './articles/articles.controller.js';
+import Articles from './common/resources/article.js';
 
 angular.module('client', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router'])
   .constant('malarkey', malarkey)
@@ -19,8 +21,12 @@ angular.module('client', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ng
   .config(routerConfig)
 
   .run(runBlock)
+  .factory('Articles', Articles)
+
   .service('githubContributor', GithubContributorService)
   .service('webDevTec', WebDevTecService)
   .controller('MainController', MainController)
+  .controller('ArticlesController', ArticlesController)
   .directive('acmeNavbar', () => new NavbarDirective())
   .directive('acmeMalarkey', () => new MalarkeyDirective(malarkey));
+
