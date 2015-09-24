@@ -32,3 +32,8 @@ tags
 .tags
 .gemtags
 zeus.json
+
+# gulp angular
+client/ower_components
+client/node_modules
+client/.tmp
