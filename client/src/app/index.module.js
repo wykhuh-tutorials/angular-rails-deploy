@@ -10,6 +10,7 @@ import WebDevTecService from '../app/components/webDevTec/webDevTec.service';
 import NavbarDirective from '../app/components/navbar/navbar.directive';
 import MalarkeyDirective from '../app/components/malarkey/malarkey.directive';
 import ArticlesController from './articles/articles.controller.js';
+import Article from './common/resources/article.js';
 
 angular.module('client', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router'])
   .constant('malarkey', malarkey)
@@ -20,6 +21,8 @@ angular.module('client', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ng
   .config(routerConfig)
 
   .run(runBlock)
+  .factory('Article', Article)
+
   .service('githubContributor', GithubContributorService)
   .service('webDevTec', WebDevTecService)
   .controller('MainController', MainController)
