@@ -12,7 +12,7 @@ gem 'newrelic_rpm', '>= 3.9.8'
 gem 'pg', '~> 0.18.3'
 gem 'quiet_assets', '~> 1.1.0'
 gem 'rack-canonical-host', '~> 0.1.0'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.8'
 gem 'recipient_interceptor', '~> 0.1.2'
 gem 'sass-rails', '~> 5.0'
 gem 'sidekiq', '~> 3.5.0'
@@ -41,7 +41,7 @@ group :development, :test do
   gem 'pry-byebug', '~> 3.2.0'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails', '~> 3.1.0'
-  gem 'rubocop', '~> 0.34.2'
+  gem 'rubocop', '~> 0.49.0'
 end
 
 group :test do
